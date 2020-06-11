@@ -19,7 +19,7 @@ export default function TodoBadge({ count, title }) {
   return (
     <React.Fragment>
       <Title>{title}</Title>
-      <Typography component="p" variant="h4">
+      <Typography component="p" variant="h3">
         {count}
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>

@@ -45,67 +45,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Todos() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      name: "Walk the dog",
-      time: 2,
-      complete: false,
-    },
-    {
-      id: 2,
-      name: "Get dinner",
-      time: 1,
-      complete: false,
-    },
-    {
-      id: 3,
-      name: "Watch the news",
-      time: 1,
-      complete: false,
-    },
-  ]);
-  const [entry, setEntry] = useState({
-    id: "",
-    name: "",
-    time: "",
-    complete: false,
-  });
+export default function Todos({
+  todos,
+  setTodos,
+  handleSubmit,
+  handleDelete,
+  toggleComplete,
+  entry,
+  setEntry,
+  handleChange,
+}) {
   const classes = useStyles();
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
-  const handleChange = (name) => (e) => {
-    setEntry({
-      ...entry,
-      [name]:
-        e.target.type === "number" ? parseInt(e.target.value) : e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    console.log(todos);
-    let arr = todos;
-    entry.id = uuidv4();
-    arr.push(entry);
-
-    setTodos(arr);
-    setEntry({ id: "", name: "", time: "", complete: false });
-  };
-
-  function handleDelete(id) {
-    let arr = todos.filter((todo) => todo.id != id);
-    setTodos(arr);
-  }
-
-  function toggleComplete(id) {
-    let arr = todos.map((todo) =>
-      todo.id === id ? { ...todo, complete: !todo.complete } : todo
-    );
-
-    setTodos(arr);
-  }
   return (
     <main className={classes.content}>
       <div className={classes.appBarSpacer} />

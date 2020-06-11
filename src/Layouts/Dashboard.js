@@ -2,26 +2,14 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
-import Link from "@material-ui/core/Link";
-import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import { mainListItems, secondaryListItems } from "../listitems";
-import CreateDialogue from "../CreateDialogue";
+
 import { Route } from "react-router-dom";
 import Todos from "../Pages/Todos";
 import DrawerComponent from "../Navigation/DrawerComponent";
 import AppBarComponent from "../Navigation/AppBarComponent";
+import { v4 as uuidv4 } from "uuid";
 
-const drawerWidth = 240;
+import { useMediaQuery } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,16 +56,76 @@ export default function Dashboard(props) {
     setOpen(false);
   };
 
+  const handleChange = (name) => (e) => {
+    setEntry({
+      ...entry,
+      [name]:
+        e.target.type === "number" ? parseInt(e.target.value) : e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    let arr = todos;
+    entry.id = uuidv4();
+    arr.push(entry);
+
+    setTodos(arr);
+    setEntry({
+      id: "",
+      name: "",
+      time: "",
+      complete: false,
+    });
+  };
+
+  function handleDelete(id) {
+    let arr = todos.filter((todo) => todo.id != id);
+    setTodos(arr);
+  }
+
+  function toggleComplete(id) {
+    let arr = todos.map((todo) =>
+      todo.id === id ? { ...todo, complete: !todo.complete } : todo
+    );
+
+    setTodos(arr);
+  }
+
+  const isActive = useMediaQuery("(min-width: 814px)");
+
+  console.log(isActive);
+
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBarComponent handleDrawerOpen={handleDrawerOpen} open={open} />
-      <DrawerComponent
+      <AppBarComponent
         handleDrawerOpen={handleDrawerOpen}
-        handleDrawerClose={handleDrawerClose}
-        open={open}
+        open={isActive && open}
+        incomplete={todos.filter((todo) => todo.complete == false).length}
       />
-      <Route path="/dashboard" render={() => <Todos todos={todos} />} />
+      {isActive && (
+        <DrawerComponent
+          handleDrawerOpen={handleDrawerOpen}
+          handleDrawerClose={handleDrawerClose}
+          open={open}
+        />
+      )}
+
+      <Route
+        path="/dashboard"
+        render={() => (
+          <Todos
+            todos={todos}
+            setTodos={setTodos}
+            handleSubmit={handleSubmit}
+            toggleComplete={toggleComplete}
+            handleDelete={handleDelete}
+            entry={entry}
+            setEntry={setEntry}
+            handleChange={handleChange}
+          />
+        )}
+      />
     </div>
   );
 }
