@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-/* import mobiscroll */
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 
 /* Icons */
-
 import Settings from "@material-ui/icons/Settings";
 import PieChartIcon from "@material-ui/icons/PieChart";
 import Home from "@material-ui/icons/Home";

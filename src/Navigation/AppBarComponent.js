@@ -101,11 +101,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AppBarComponent({
-  handleDrawerOpen,
-  open,
-  incomplete,
-}) {
+export default function AppBarComponent({ handleDrawerOpen, open }) {
   const classes = useStyles();
 
   return (
@@ -133,7 +129,7 @@ export default function AppBarComponent({
           Dashboard
         </Typography>
         <IconButton color="inherit">
-          <Badge badgeContent={incomplete} color="secondary">
+          <Badge badgeContent={3} color="secondary">
             <NotificationsIcon />
           </Badge>
         </IconButton>

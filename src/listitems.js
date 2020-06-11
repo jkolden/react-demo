@@ -7,6 +7,8 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import LayersIcon from "@material-ui/icons/Layers";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
+
 import { NavLink } from "react-router-dom";
 
 export const mainListItems = (
@@ -19,7 +21,15 @@ export const mainListItems = (
         <ListItemText primary="Dashboard" />
       </ListItem>
     </NavLink>
-    <NavLink to="/dashboard">
+    <NavLink to="/recoil">
+      <ListItem button>
+        <ListItemIcon>
+          <CheckBoxIcon />
+        </ListItemIcon>
+        <ListItemText primary="Todos" />
+      </ListItem>
+    </NavLink>
+    <NavLink to="/analytics">
       <ListItem button>
         <ListItemIcon>
           <BarChartIcon />
@@ -27,12 +37,6 @@ export const mainListItems = (
         <ListItemText primary="Analytics" />
       </ListItem>
     </NavLink>
-    <ListItem button>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Integrations" />
-    </ListItem>
   </div>
 );
 
