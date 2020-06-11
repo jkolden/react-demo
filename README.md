@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is a simple todo app using the new recoil API for state management.
+
+To run this app, clone this repo into a directory on your machine, cd onto that directory and run NPM install. Then follow the steps below to run locally on your localhost.
+
+![image](https://user-images.githubusercontent.com/21246211/84407098-3d134e00-abbf-11ea-84b9-49bd64f3d5a8.png)
 
 ## Available Scripts
 
@@ -7,7 +11,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000/todos](http://localhost:3000/todos) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.

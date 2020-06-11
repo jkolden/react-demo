@@ -13,15 +13,7 @@ import { NavLink } from "react-router-dom";
 
 export const mainListItems = (
   <div>
-    <NavLink to="/dashboard">
-      <ListItem button>
-        <ListItemIcon>
-          <DashboardIcon />
-        </ListItemIcon>
-        <ListItemText primary="Dashboard" />
-      </ListItem>
-    </NavLink>
-    <NavLink to="/recoil">
+    <NavLink to="/todos">
       <ListItem button>
         <ListItemIcon>
           <CheckBoxIcon />
@@ -35,6 +27,14 @@ export const mainListItems = (
           <BarChartIcon />
         </ListItemIcon>
         <ListItemText primary="Analytics" />
+      </ListItem>
+    </NavLink>
+    <NavLink to="/dashboard">
+      <ListItem button>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Dashboard" />
       </ListItem>
     </NavLink>
   </div>

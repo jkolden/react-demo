@@ -49,7 +49,7 @@ export default function Dashboard(props) {
         />
       )}
 
-      <Route path="/recoil" render={() => <RecoilPage />} />
+      <Route path="/todos" render={() => <RecoilPage />} />
       <Route path="/analytics" render={() => <Analytics />} />
     </div>
   );
