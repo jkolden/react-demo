@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 
 export const mainListItems = (
   <div>
-    <NavLink to="/todos">
+    <NavLink to="/" exact style={{ textDecoration: "none", color: "black" }}>
       <ListItem button>
         <ListItemIcon>
           <CheckBoxIcon />
@@ -21,7 +21,7 @@ export const mainListItems = (
         <ListItemText primary="Todos" />
       </ListItem>
     </NavLink>
-    <NavLink to="/analytics">
+    <NavLink to="/analytics" style={{ textDecoration: "none", color: "black" }}>
       <ListItem button>
         <ListItemIcon>
           <BarChartIcon />
@@ -29,7 +29,7 @@ export const mainListItems = (
         <ListItemText primary="Analytics" />
       </ListItem>
     </NavLink>
-    <NavLink to="/dashboard">
+    <NavLink to="/grid" style={{ textDecoration: "none", color: "black" }}>
       <ListItem button>
         <ListItemIcon>
           <DashboardIcon />

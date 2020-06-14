@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   drawerPaper: {
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
     position: "relative",
     whiteSpace: "nowrap",
     width: drawerWidth,

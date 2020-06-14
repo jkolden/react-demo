@@ -2,7 +2,23 @@ import { atom, selector } from "recoil";
 
 const todoListState = atom({
   key: "todoListState",
-  default: [],
+  default: [
+    {
+      id: 100,
+      text: "Walk the Dog",
+      isComplete: false,
+    },
+    {
+      id: 101,
+      text: "Read the Newspaper",
+      isComplete: false,
+    },
+    {
+      id: 102,
+      text: "Go to Work",
+      isComplete: true,
+    },
+  ],
 });
 
 const todoListFilterState = atom({

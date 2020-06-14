@@ -23,6 +23,7 @@ import {
 } from "recoil";
 
 import { makeStyles } from "@material-ui/core/styles";
+import { CallReceived } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     overflow: "auto",
     float: "right",
+    [theme.breakpoints.down("xs")]: {
+      height: "calc(100vh - 112px)",
+    },
   },
   container: {
     paddingTop: theme.spacing(4),
