@@ -1,8 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is a simple todo app using the new recoil API for state management.
 
-To run this app, clone this repo into a directory on your machine, cd onto that directory and run NPM install. Then follow the steps below to run locally on your localhost.
+To run this app, clone this repo into a directory on your machine, cd onto that directory and run NPM install. Then follow the steps below to run locally on your localhost. The app will also install as PWA on a mobile simulator from localhost.
 
-![image](https://user-images.githubusercontent.com/21246211/84407098-3d134e00-abbf-11ea-84b9-49bd64f3d5a8.png)
+![image](https://user-images.githubusercontent.com/21246211/84611710-7b389800-ae73-11ea-820a-1339156d741c.png)
 
 ## Available Scripts
 
