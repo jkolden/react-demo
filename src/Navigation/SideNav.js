@@ -5,16 +5,16 @@ export default function SideNav() {
     <nav className="nav">
       <ul>
         <li>
-          <a href="#">Search</a>
-        </li>
-        <li>
           <a href="#">Home</a>
         </li>
         <li>
-          <a href="#">Settings</a>
+          <a href="#">About</a>
         </li>
         <li>
-          <a href="#">Skills</a>
+          <a href="#">Privacy</a>
+        </li>
+        <li>
+          <a href="#">Analytics</a>
         </li>
         <li>
           <a href="#">Contact</a>

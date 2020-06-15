@@ -22,14 +22,6 @@ import Grid from "@material-ui/core/Grid";
 import { createBrowserHistory } from "history";
 import { RecoilRoot } from "recoil";
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: "#1976d2",
-    },
-  },
-});
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -56,17 +48,20 @@ function App() {
     setOpen(false);
   };
 
-  const containerStyles = {
-    height: "calc(100vh - 112px)",
-    overflow: "auto",
-    textAlign: "center",
-  };
-
   let theme = createMuiTheme({
     palette: {
       type: themeMode,
       primary: {
-        main: themeMode === "light" ? "#2196f3" : "#111",
+        light: "#757ce8",
+        main: "#3476cb",
+        dark: "#002884",
+        contrastText: "#fff",
+      },
+      secondary: {
+        light: "#ff7961",
+        main: "#f44336",
+        dark: "#ba000d",
+        contrastText: "#000",
       },
     },
   });
@@ -96,13 +91,17 @@ function App() {
       <RecoilRoot>
         <ThemeProvider theme={theme}>
           <BrowserRouter history={history}>
-            <MobileTopNav
+            {/*<MobileTopNav
+              themeMode={themeMode}
+              lightMode={handleLightMode}
+              darkMode={handleDarkMode}
+            />*/}
+
+            <AltTopNav
               themeMode={themeMode}
               lightMode={handleLightMode}
               darkMode={handleDarkMode}
             />
-
-            {/*<AltTopNav />*/}
             <AppBarComponent handleDrawerOpen={handleDrawerOpen} open={open} />
             <DrawerComponent
               handleDrawerOpen={handleDrawerOpen}

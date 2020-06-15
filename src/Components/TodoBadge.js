@@ -7,6 +7,15 @@ import Typography from "@material-ui/core/Typography";
 import Title from "../Layouts/Title";
 
 const useStyles = makeStyles({
+  root: {
+    display: "flex",
+    alignItem: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+  },
+  center: {
+    alignSelf: "center",
+  },
   depositContext: {
     flex: 1,
   },
@@ -17,10 +26,10 @@ export default function TodoBadge({ count, title }) {
   let date = Date(Date.now());
 
   return (
-    <React.Fragment>
+    <div className={classes.root}>
       <Title>{title}</Title>
-      <Typography component="p" variant="h3">
-        {count}
+      <Typography component="p" variant="h3" className={classes.center}>
+        {`${count}${title == "Percent Completed" ? "%" : ""}`}
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
         June 12, 2020
@@ -30,6 +39,6 @@ export default function TodoBadge({ count, title }) {
           View Details
         </Link>
       </div>
-    </React.Fragment>
+    </div>
   );
 }

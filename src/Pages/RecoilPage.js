@@ -83,9 +83,12 @@ export default function RecoilPage() {
             <Paper className={classes.paper}>
               <RecoilTodoListFilters />
               <List>
-                {todoList.map((todoItem) => (
-                  <RecoilTodoItem key={todoItem.id} item={todoItem} />
-                ))}
+                {todoList
+                  .slice()
+                  .sort((a, b) => a.id - b.id)
+                  .map((todoItem) => (
+                    <RecoilTodoItem key={todoItem.id} item={todoItem} />
+                  ))}
               </List>
             </Paper>
           </Grid>

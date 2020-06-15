@@ -17,7 +17,6 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import { mainListItems, secondaryListItems } from "../listitems";
 import CreateDialogue from "../CreateDialogue";
 import { Route } from "react-router-dom";
-import Todos from "../Pages/Todos";
 
 const drawerWidth = 240;
 
